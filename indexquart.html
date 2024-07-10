@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CatManDoControlPanel</title>
+	<link rel="stylesheet" href="catmanto.css">
+	<script lang="en" type="text/javascript"  language="javascript">
+
+function sendCatalog() {
+	$htmlcode ='<form id="CatForm" name="sendCat" action="uploadbis.php" method ="post" enctype="multipart/form-data">Send Catalogue of Service to Web Server</br><input id="FileId" type="file" name="CatalogueName" value="" target="_self"/><br/><input id="submit" type="submit" name="CatalogName" value="OK" target="_self"/></br></form>';
+p=document.getElementById('Msg');
+	Msg.innerHTML= "Catalogue Transfert Process initialized";	
+
+var s=document.getElementById('Msg3');
+Msg3.innerHTML= $htmlcode;
+}
+function ReceiveCatalog() { 
+//window.open("xxx",'_blank');
+	$htmlcode ='<form id="CatForm" name="ReceiveCat" action="recupcatlog.php" method ="post" enctype="multipart/form-data">Receive Catalogue of Service from Web Server to local client</br><br/><input id="submit" type="submit" name="CatalogName" value="OK" target="_self"/></br></form>';
+p=document.getElementById('Msg2');
+	Msg.innerHTML= " Catalogue Transfert from web server initialized";	
+var s=document.getElementById('Msg2');
+Msg2.innerHTML= $htmlcode;
+}
+
+function DBCoSCreation() {
+//window.open("xxx",'_blank');
+	$htmlcode ='<form id="CatForm" name="DBcreation" action = "createbasecatalog4.php" method = "post"><p> <input type="text" name = "catname"></p><p> <input type="submit" name = "insert" value = "Insert data"></p></form>'
+p=document.getElementById('Msg2');
+	Msg.innerHTML= " Creation of Master Service Agreement table";	
+var s=document.getElementById('Msg2');
+Msg2.innerHTML= $htmlcode;
+}
+
+/*//window.open("xxx",'_blank');
+	$htmlcode ='<form id="CatForm" name="DBcreation" action = "createbasecatalogessai.php" method = "post"><p> <input type="text" name = "catname"></p><p> <input type="submit" name = "insert" value = "Insert data"></p></form>'
+p=document.getElementById('Msg2');
+	Msg.innerHTML= " Creation of Master Service Agreement table";	
+var s=document.getElementById('Msg2');
+Msg2.innerHTML= $htmlcode;
+}*/
+
+function DBCoSCheck() {
+//window.open("xxx",'_blank');
+	$htmlcode ='<form id="CatForm" name="DBcreation" action = "checkcataloguedatabase.php" method = "post"><p> <input type="text" name = "catname"></p><p> <input type="submit" name = "insert" value = "Control catalogue data"></p></form>'
+p=document.getElementById('Msg2');
+Msg.innerHTML= " Give Data Base name to be checked";	
+var s=document.getElementById('Msg2');
+Msg2.innerHTML= $htmlcode;
+}
+function OpenUserGuide() {
+window.open('CatManDoUserGuide.html','_blank');
+}
+function OpenCustomerDetails() {
+window.open('customerdetails.html','_blank');
+}
+function uploadreturn(){
+	p=document.getElementById('Msg3');
+	Msg3.innerHTML= "retour upload ==> messagefinal " + $messagefinal;	
+	}
+	function ConfirmLogin(){
+       if (confirm("Do you want to start CatManDo ?")) {
+           // Clic sur OK
+           document.body.style.backgroundColor="#FFCC99";
+       }
+	   else {
+	   document.body.style.backgroundColor="#FFFFFF";
+       }
+   }
+   
+   function logoutcatmando(){
+/*var nom = window.location.pathname;
+alert(nom);
+nom = nom.split("/");
+nom = nom[nom.length - 1];
+nom = nom.substr(0, nom.lastIndexOf("."));
+nom = nom.replace(new RegExp("(%20|_|-)", "g"), "");
+alert(nom);*/
+   if (confirm("Do you want to leave CatManDo ?")) {
+           // Clic sur OK
+      document.body.style.backgroundColor="#FFFFFF";
+      window.location.href='indexquart.html';
+	  p=document.getElementById('Msg');
+	  Msg.innerHTML= 'Please click the top right cross of CatManDo to close the tab';
+	  //window.open('indexarara.html','_blank');
+	  // document.body.block6.write(" Please click the top right cross of CatManDo tag");
+		/*nom=nom +'.html';	  
+		alert(nom);
+		alert("on va fermer");*/
+	  }
+	   else {
+	   document.body.style.backgroundColor="#FFCC99";
+		p=document.getElementById('Msg');
+		Msg.innerHTML= '';
+       }
+		/*window.opener = null;
+		window.open("", "_self");*/
+		/*window.open("","_parent","")*/
+/*var win = window.open(“”,”_self”); /* url = “” or “about:blank”;       target=”_self” */
+/*win.close();*/
+/*window.close();*/	
+}
+function Fermer() {
+  var myWindow = window.open("", "_self");
+  myWindow.document.write("<p>I replaced the current window.</p>");
+}
+  
+</script>
+</head>
+
+<body>
+<div id="Bloc1">
+<img class="logo_orange" src="Orange_logo.jpg" title="Orange Business Service">
+</div >
+<div id="Bloc3">
+<img class="client" src="client.png"  title="Customer Brand">
+</div >
+<div id="Bloc2">
+<P id="CMT">Catalogue Manager Tool</br>CatManDo</P>
+<P id="CMT2"></P>
+</div >
+<div id="container">
+<div id="Bloc4">
+<button 
+		onclick="ConfirmLogin()"
+		class="ButtonTop"
+		type="button"
+		title="Click here to login"
+		name="login">
+		<strong>Start CatManDo Interface</strong>
+</button>
+<button 
+		onclick="OpenUserGuide()"
+		class="ButtonTop"
+		type="button"
+		title="Click here to open user guide"
+		name="UserGuide">
+		<strong>Open CatManDo User Guide</strong>
+</button>
+<button 
+		onclick="window.location.href='http://localhost/phpmyadmin/';"
+		class="ButtonTop"
+		type="button"
+		title="Get data from catalog DB with SQL"
+		name="LogFile">
+		<strong>phpMyAdmin - SQL requests</strong>
+</button>
+<button 
+		onclick="OpenCustomerDetails()"
+		class="ButtonTop"
+		type="button"
+		title="Click here to select customer details"
+		name="SelCustom">
+		<strong>Select customer details</strong>
+</button>
+
+</div >
+
+<div id="Bloc5">
+<button onclick="sendCatalog()"
+		id="LeftButton1"
+        type="button"
+		title="Click here to send your catalogue to WebServer">
+   Send Excel catalogue to WebServer
+</button>
+<button 
+		onclick="ReceiveCatalog()"
+		id="LeftButton2"
+        type="button"
+		title="Click here to get your catalogue from WebServer">
+   Receive last catalogue version from WebServer
+</button>
+<button 
+		onclick="DBCoSCreation()"
+		id="LeftButton3"
+        type="button"
+		title="Click here to create your catalogue in WebServer Directory">
+   Create Catalogue Data Base
+</button>
+
+</button>
+<button 
+		onclick="DBCoSCheck()"
+		id="LeftButton5"
+        type="button"
+		title="Click here to check and control your Web catalogue ">
+   Check and Control catalogue data base 
+</button>
+</div >
+
+
+
+<div id="Bloc6">
+<p id="ExArea">Exchange Area</p>
+<p id="Msg"> </p><br>
+<p id="Msg2"></p><br>
+<p id="Msg3"></p>
+<!--<form id="CatForm" name="sendCat" action="uploadbis.php" method ="post" enctype="multipart/form-data">
+Send Catalogue of Service to Web Server</br>
+<input id="FileId" type="file" name="CatalogueName" value="" target="_self"/>
+<br/>
+<br/>
+<input id="submit" type="submit" name="CatalogName" value="OK" target="_self" 
+/></br>
+<br/>
+<br/>
+</form>
+-->
+</div>
+</div>
+</body>
+</html> 

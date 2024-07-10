@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CatManDoControlPanel</title>
+    <link rel="stylesheet" href="catmanto1.css">
+    <script lang="en" type="text/javascript" language="javascript">
+        // Les fonctions JavaScript restent inchangées
+    </script>
+</head>
+<body>
+    <div id="Bloc1">
+        <img class="logo_orange" src="Orange_logo.jpg" title="Orange Business Service">
+    </div>
+    <div id="Bloc3">
+        <img class="client" src="client.png" title="Customer Brand">
+    </div>
+    <div id="Bloc2">
+        <p id="CMT">Catalogue Manager Tool</br>CatManDo</p>
+        <p id="CMT2"></p>
+    </div>
+    <div id="container">
+        <div id="Bloc4">
+            <button onclick="ConfirmLogin()" class="ButtonTop" type="button" title="Click here to login" name="login">
+                <strong>Start CatManDo Interface</strong>
+            </button>
+            <button onclick="OpenUserGuide()" class="ButtonTop" type="button" title="Click here to open user guide" name="UserGuide">
+                <strong>Open CatManDo User Guide</strong>
+            </button>
+            <button onclick="window.location.href='http://localhost/phpmyadmin/';" class="ButtonTop" type="button" title="Get data from catalog DB with SQL" name="LogFile">
+                <strong>phpMyAdmin - SQL requests</strong>
+            </button>
+            <button onclick="OpenCustomerDetails()" class="ButtonTop" type="button" title="Click here to select customer details" name="SelCustom">
+                <strong>Select customer details</strong>
+            </button>
+        </div>
+        <div id="Bloc5">
+            <button onclick="sendCatalog()" id="LeftButton1" type="button" title="Click here to send your catalogue to WebServer">
+                Send Excel catalogue to WebServer
+            </button>
+            <button onclick="ReceiveCatalog()" id="LeftButton2" type="button" title="Click here to get your catalogue from WebServer">
+                Receive last catalogue version from WebServer
+            </button>
+            <button onclick="DBCoSCreation()" id="LeftButton3" type="button" title="Click here to create your catalogue in WebServer Directory">
+                Create Catalogue Data Base
+            </button>
+            <button onclick="DBCoSCheck()" id="LeftButton5" type="button" title="Click here to check and control your Web catalogue">
+                Check and Control catalogue data base
+            </button>
+        </div>
+        <div id="Bloc6">
+            <p id="ExArea">Exchange Area</p>
+            <p id="Msg"></p><br>
+            <p id="Msg2"></p><br>
+            <p id="Msg3"></p>
+        </div>
+    </div>
+</body>
+</html>
