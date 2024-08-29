@@ -2,13 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
-
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>CatManDoControlPanel</title>
-	<link rel="stylesheet" href="catmanto.css">
+	<link rel="stylesheet" href="catmanto1.css">
 	<script lang="en" type="text/javascript"  language="javascript">
 
 function sendCatalog() {
+	resetMessages();
 	$htmlcode ='<form id="CatForm" name="sendCat" action="uploadbis.php" method ="post" enctype="multipart/form-data">Send Catalogue of Service to Web Server</br><input id="FileId" type="file" name="CatalogueName" value="" target="_self"/><br/><input id="submit" type="submit" name="CatalogName" value="OK" target="_self"/></br></form>';
 p=document.getElementById('Msg');
 	Msg.innerHTML= "Catalogue Transfert Process initialized";	
@@ -17,10 +19,11 @@ var s=document.getElementById('Msg3');
 Msg3.innerHTML= $htmlcode;
 }
 function ReceiveCatalog() { 
+	resetMessages();
 //window.open("xxx",'_blank');
 	$htmlcode ='<form id="CatForm" name="ReceiveCat" action="recupcatlog.php" method ="post" enctype="multipart/form-data">Receive Catalogue of Service from Web Server to local client</br><br/><input id="submit" type="submit" name="CatalogName" value="OK" target="_self"/></br></form>';
 p=document.getElementById('Msg2');
-	Msg.innerHTML= " Catalogue Transfert from web server initialized";	
+	Msg.innerHTML= " Get started with Catalogue Transfert from web server";	
 var s=document.getElementById('Msg2');
 Msg2.innerHTML= $htmlcode;
 }
@@ -108,19 +111,28 @@ function Fermer() {
 }
   
 </script>
+<script>
+	function resetMessages() {
+		document.getElementById('Msg').innerHTML = "";
+		document.getElementById('Msg2').innerHTML = "";
+		document.getElementById('Msg3').innerHTML = ""
+	}
+</script>
 </head>
 
 <body>
-<div id="Bloc1">
-<img class="logo_orange" src="Orange_logo.jpg" title="Orange Business Service">
-</div >
-<div id="Bloc3">
-<img class="client" src="client.png"  title="Customer Brand">
-</div >
-<div id="Bloc2">
-<P id="CMT">Catalogue Manager Tool</br>CatManDo</P>
-<P id="CMT2"></P>
-</div >
+<div id="ContainerDuTitre">
+	<div id="Bloc1">
+	<img class="logo_orange" src="Orange_logo.jpg" title="Orange Business Service">
+	</div >
+	<div id="Bloc3">
+	<img class="client" src="client.png"  title="Customer Brand">
+	</div >
+	<div id="Bloc2">
+	<P id="CMT">Catalogue Manager Tool</br>CatManDo</P>
+	<P id="CMT2"></P>
+	</div >
+</div>
 <div id="container">
 <div id="Bloc4">
 <button 

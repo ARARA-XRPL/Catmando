@@ -1,199 +1,165 @@
+/* Réinitialisation des marges et paddings par défaut */
 html, body {
- margin: 50;
- padding: 0;
- }
-body {
- background-color: white; 
- font-family: Verdana, sans-serif; 
- font-size: 100%;
- }
-#Bloc1{	
-  float:left ;
-  background: cyan ;
-  width:150px ;
-  height:150px;
-  margin: 0px ;
-  display:table;
-}
-#Bloc3{ float:right;
-  background: red ;
-  width:150px   ;
-  height:150px;
-  margin: 0px ;
-}
-#Bloc2{            ;
-  background: black ;
-  width:95%    ;
-  height:150px;
-  margin: 0px ;
-  j
-}
-#Bloc4{ 
-  background: white ;
-  width:95%;
-  margin: 10px ;
-  height: 50px;
-  border-radius: 25px;
-  border: 2px solid black;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 10px;
-  background-image: linear-gradient(black, white);
-}
-#CMT{
- font-size: 300%; 
- color: white; 
- text-align: center;
- border:10px;
-}
-#CMT2{
- font-size: 100%; 
- color: white; 
- text-align: center;
-}
-#Bloc5{
-  background: white ;
-  display:inline;
-  float:left;
-  width:300px;
-  height: 450px;
-  border-radius: 25px;
-  border: 2px solid black;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 0px;
-  background-image: linear-gradient(black, white);
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, sans-serif; 
+  font-size: 100%;
 }
 
-#Bloc6{
-float:right;
-display:inline;
-background: cyan;
-width:65%;
-height:450px;
-padding: 2px;
-margin-right: 30px;
-border-radius: 25px;
-border: 2px solid black;
-background-image: linear-gradient(white, #D3D3D3);
+body {
+  background-color: white;
 }
-#container{
-	background: #F9E5E0 ;
-  width:95%;
-  margin: 2px ;
-  height: 600px;
+
+/* Conteneur principal avec Flexbox pour la mise en page flexible */
+#container {
+  display: flex; /* Utilisation de Flexbox pour disposition flexible */
+  flex-wrap: wrap; /* Permet aux enfants de se répartir sur plusieurs lignes si nécessaire */
+  justify-content: space-around; /* Distribution uniforme de l'espace autour des éléments */
+  background: #F9E5E0;
+  width: 100%; /* S'adapte à la largeur de la fenêtre */
+  padding: 20px;
   border-radius: 15px;
   border: 2px solid black;
-  padding: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.client{
-	width:150px;
-	height:150px;
-	text-align: table-cell;
-	display: block;
-	vertical-align: middle;
-	
-}
-.logo_orange{
-	width:150px;
-	height:150px;
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-}
-#ExArea{
- font-size: 200%; 
- color: black; 
- text-align: center;
- border:0px;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans les dimensions */
 }
 
-#Entreprise{
- font-size: 100%; 
- color: white; 
- text-align: center;
- border:0px;
+/* Applique box-sizing et marges cohérentes pour tous les blocs */
+#Bloc1, #Bloc3, #Bloc2, #Bloc4, #Bloc5, #Bloc6 {
+  box-sizing: border-box; /* Inclut le padding et la bordure dans les dimensions */
+  margin: 10px; /* Ajoute de l'espace autour des éléments */
 }
 
-#LeftButton1{
-background-color:white;
-width:250px;
-margin:0 auto:
-height:75px;
-font-size:15px;
-border-radius: 25px;
-  border: 2px solid orange;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 100px;
-  text-align:center;
+/* Styles pour Bloc1, Bloc2 et Bloc3 pour les aligner horizontalement */
+#Bloc1, #Bloc2, #Bloc3 {
+  display: flex; /* Utilisation de Flexbox pour disposition flexible */
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
 }
-#LeftButton2{
-background-color:white;
-width:250px;
-margin-top:20px;
-height:75px;
-font-size:15px;
-border-radius: 25px;
-  border: 2px solid orange;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 100px;
-  text-align:center;
+
+#Bloc1, #Bloc3 {
+  width: 150px;
+  height: 150px;
 }
-#LeftButton3{
-background-color:white;
-width:250px;
-margin-top:20px;
-height:75px;
-font-size:15px;
-border-radius: 25px;
-  border: 2px solid orange;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 100px;
-  text-align:center;
+
+#Bloc1 {
+  background: cyan;
 }
-#LeftButton4{
-background-color:white;
-width:250px;
-margin-top:20px;
-height:75px;
-font-size:15px;
-border-radius: 25px;
-  border: 2px solid orange;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 100px;
-  text-align:center;
+
+#Bloc3 {
+  background: red;
 }
-#LeftButton5{
-background-color:white;
-width:250px;
-margin-top:20px;
-height:75px;
-font-size:15px;
-border-radius: 25px;
-  border: 2px solid orange;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 100px;
-  text-align:center;
+
+/* Bloc2 prend une largeur flexible pour s'adapter à l'espace restant */
+#Bloc2 {
+  background: black;
+  color: white;
+  text-align: center;
+  flex-grow: 1; /* Prend l'espace flexible restant */
+  height: 150px;
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
 }
-.ButtonTop{
-background-color:orange;
-display:inline
-width:250px;
-margin-top:10px;
-height:50px;
-font-size:15px;
-font-style: bold;
-border-radius: 15px;
+
+#CMT {
+  font-size: 3em; /* Taille de police relative */
+}
+
+#CMT2 {
+  font-size: 1em; /* Taille de police relative */
+}
+
+/* Bloc4 et Bloc5 prennent un espace flexible et s'ajustent */
+#Bloc4 {
+  background: white;
+  flex: 1; /* Prend un espace flexible dans le conteneur */
+  margin: 10px;
+  height: auto; /* Ajuste automatiquement la hauteur */
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  background-image: linear-gradient(black, white);
+}
+
+#Bloc5 {
+  background: white;
+  flex: 1; /* Prend un espace flexible dans le conteneur */
+  min-width: 300px; /* Assure une largeur minimale */
+  height: auto; /* Ajuste automatiquement la hauteur */
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  background-image: linear-gradient(black, white);
+}
+
+/* Bloc6 prend plus d'espace flexible */
+#Bloc6 {
+  background: cyan;
+  flex: 2; /* Prend deux fois plus d'espace flexible que Bloc4 et Bloc5 */
+  min-width: 300px; /* Assure une largeur minimale */
+  height: auto; /* Ajuste automatiquement la hauteur */
+  padding: 20px;
+  border-radius: 25px;
+  border: 2px solid black;
+  background-image: linear-gradient(white, #D3D3D3);
+}
+
+/* Les images s'ajustent à 100% de leur conteneur */
+.client, .logo_orange {
+  width: 100%;
+  height: auto;
+}
+
+/* Style pour le texte de la zone d'échange */
+#ExArea {
+  font-size: 2em; /* Taille de police relative */
+  color: black;
+  text-align: center;
+}
+
+/* Styles pour les boutons à gauche */
+#LeftButton1, #LeftButton2, #LeftButton3, #LeftButton4, #LeftButton5 {
+  background-color: white;
+  width: 100%; /* Prend 100% de la largeur du parent */
+  margin: 10px 0; /* Espace vertical entre les boutons */
+  height: 75px;
+  font-size: 1em; /* Taille de police relative */
+  border-radius: 25px;
   border: 2px solid orange;
   padding: 10px;
-  margin-left: 50px;
-  text-align:center;
-  vertical-align:top;
+  text-align: center;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans les dimensions */
+}
+
+/* Styles pour les boutons en haut */
+.ButtonTop {
+  background-color: orange;
+  display: inline-block;
+  width: 100%; /* Prend 100% de la largeur du parent */
+  margin: 10px 0; /* Espace vertical entre les boutons */
+  height: 50px;
+  font-size: 1em; /* Taille de police relative */
+  font-weight: bold;
+  border-radius: 15px;
+  border: 2px solid orange;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans les dimensions */
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 768px) {
+  #Bloc1, #Bloc3 {
+      width: 100%;
+      height: auto;
+  }
+
+  #Bloc2, #Bloc4, #Bloc5, #Bloc6 {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .ButtonTop, #LeftButton1, #LeftButton2, #LeftButton3, #LeftButton4, #LeftButton5 {
+      width: 100%;
+  }
 }

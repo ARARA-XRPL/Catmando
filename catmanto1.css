@@ -1,159 +1,193 @@
 html, body {
-    margin: 0;
-    padding: 0;
-   }
-   
-   body {
-    background-color: white; 
-    font-family: Verdana, sans-serif; 
-    font-size: 100%;
-   }
-   
-   #Bloc1 {	
-     float: left;
-     background: cyan;
-     width: 150px;
-     height: 150px;
-     margin: 0;
-     display: table;
-   }
-   
-   #Bloc3 { 
-     float: right;
-     background: red;
-     width: 150px;
-     height: 150px;
-     margin: 0;
-   }
-   
-   #Bloc2 {
-     background: black;
-     width: 95%;
-     height: 150px;
-     margin: 0;
-   }
-   
-   #Bloc4 { 
-     background: white;
-     width: 95%;
-     margin: 10px;
-     height: 50px;
-     border-radius: 25px;
-     border: 2px solid black;
-     padding: 20px;
-     margin-left: 20px;
-     margin-right: 10px;
-     background-image: linear-gradient(black, white);
-   }
-   
-   #CMT {
-    font-size: 300%; 
-    color: white; 
-    text-align: center;
-    border: 10px;
-   }
-   
-   #CMT2 {
-    font-size: 100%; 
-    color: white; 
-    text-align: center;
-   }
-   
-   #Bloc5 {
-     background: white;
-     display: inline-block;
-     width: 300px;
-     height: 450px;
-     border-radius: 25px;
-     border: 2px solid black;
-     padding: 20px;
-     margin-left: 20px;
-     background-image: linear-gradient(black, white);
-   }
-   
-   #Bloc6 {
-    float: right;
-    display:block;
-    background: cyan;
-    width: 65%;
-    height: 450px;
-    padding: 1px;
-    margin-right: 30px;
-    border-radius: 25px;
-    border: 2px solid black;
-    background-image: linear-gradient(white, #D3D3D3);
+  margin: 0;
+  padding: 0;
 }
 
-   
-   #container::after {
-     content: "";
-     display: table;
-     clear: both;
-   }
-   
-   #container {
-     background: #F9E5E0;
-     width: 95%;
-     margin: 2px auto;
-     height: auto;
-     border-radius: 15px;
-     border: 2px solid black;
-     padding: 20px;
-   }
-   
-   .client {
-     width: 150px;
-     height: 150px;
-     text-align: table-cell;
-     display: block;
-     vertical-align: middle;
-   }
-   
-   .logo_orange {
-     width: 150px;
-     height: 150px;
-     text-align: center;
-     display: table-cell;
-     vertical-align: middle;
-   }
-   
-   #ExArea {
-    font-size: 200%; 
-    color: black; 
-    text-align: center;
-    border: 0;
-   }
-   
-   #Entreprise {
-    font-size: 100%; 
-    color: white; 
-    text-align: center;
-    border: 0;
-   }
-   
-   #LeftButton1, #LeftButton2, #LeftButton3, #LeftButton4, #LeftButton5 {
-     background-color: white;
-     width: 250px;
-     margin-top: 20px;
-     height: 75px;
-     font-size: 15px;
-     border-radius: 25px;
-     border: 2px solid orange;
-     padding: 20px;
-     text-align: center;
-   }
-   
-   .ButtonTop {
-     background-color: orange;
-     display: inline-block;
-     width: 250px;
-     margin-top: 10px;
-     height: 50px;
-     font-size: 15px;
-     font-weight: bold;
-     border-radius: 15px;
-     border: 2px solid orange;
-     padding: 10px;
-     text-align: center;
-   }
-   
+body {
+  background-color: white; 
+  font-family: Verdana, sans-serif; 
+  font-size: 100%;
+}
+
+#ContainerDuTitre::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#ContainerDuTitre {
+  background: #e0f0f9;
+  width: 95%;
+  max-width: 100%;
+  margin: 2px auto;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid black;
+  padding: 20px;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+#Bloc1, #Bloc2, #Bloc3, #TextContainer {
+  border: 1px solid red; /* Ajout d'une bordure pour le diagnostic */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+#Bloc1 {
+  display: flex;
+  align-items: center;
+}
+
+#TextContainer {
+  text-align: center;
+  flex-grow: 1; /* Permet au conteneur de texte de prendre l'espace restant */
+  background-color: #f9f9f9; /* Fond très clair */
+  color: black; /* Texte en noir */
+  padding: 10px; /* Ajouter du padding pour améliorer l'apparence */
+  border-radius: 10px; /* Ajouter des coins arrondis pour le conteneur de texte */
+}
+
+#Bloc3 { 
+  display: flex;
+  align-items: center;
+}
+
+#Bloc2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligne les éléments avec de l'espace entre eux */
+  background-color: #ede0f9;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid black;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+#Bloc4 { 
+  background: white;
+  width: 95%;
+  margin: 10px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  background-image: linear-gradient(black, white);
+}
+
+#CMT {
+  font-size: 300%; 
+  color: white; 
+  text-align: center;
+  border: 10px;
+}
+
+#CMT2 {
+  font-size: 100%; 
+  color: white; 
+  text-align: center;
+}
+
+#Bloc5 {
+  background: white;
+  display: inline-block;
+  width: 300px;
+  height: 450px;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  margin-left: 20px;
+  background-image: linear-gradient(black, white);
+}
+
+#Bloc6 {
+  float: right;
+  display: block;
+  background: cyan;
+  width: 65%;
+  height: 450px;
+  padding: 1px;
+  margin-right: 30px;
+  border-radius: 25px;
+  border: 2px solid black;
+  background-image: linear-gradient(white, #D3D3D3);
+}
+
+#container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#container {
+  background: #F9E5E0;
+  width: 95%;
+  margin: 2px auto;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.client {
+  width: 100px;
+}
+
+.logo_orange {
+  width: 100px;
+}
+
+#ExArea {
+  font-size: 200%; 
+  color: black; 
+  text-align: center;
+  border: 0;
+}
+
+#Entreprise {
+  font-size: 100%; 
+  color: white; 
+  text-align: center;
+  border: 0;
+}
+
+#LeftButton1, #LeftButton2, #LeftButton3, #LeftButton4, #LeftButton5 {
+  background-color: white;
+  width: 250px;
+  margin-top: 20px;
+  height: 75px;
+  font-size: 15px;
+  border-radius: 25px;
+  border: 2px solid orange;
+  padding: 20px;
+  text-align: center;
+}
+
+.ButtonTop {
+  background-color: orange;
+  display: inline-block;
+  width: 250px;
+  margin-top: 10px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 2px solid orange;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Media queries pour ajuster les styles sur des écrans plus petits */
+@media (max-width: 768px) {
+  #ContainerDuTitre {
+      padding: 10px;
+  }
+  #Bloc2 {
+      flex-direction: column;
+      padding: 10px;
+  }
+  #Bloc1, #Bloc3, #TextContainer {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
